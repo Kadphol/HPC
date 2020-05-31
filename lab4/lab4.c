@@ -105,7 +105,6 @@ int main(int argc,char *argv[])
     matrixCBuffer = (double *)malloc(partRow * rowB * sizeof(double));
     
     MPI_Bcast(matrixB,rowB * colB,MPI_DOUBLE,0,MPI_COMM_WORLD);
-
     MPI_Scatter(&(*matrixA),partRow * colA,MPI_DOUBLE,&(*matrixBuffer),partRow * colA,MPI_DOUBLE,0,MPI_COMM_WORLD);
 
     for (i = 0; i < partRow; i++)
