@@ -162,7 +162,6 @@ int main(int argc, char *argv[])
                 matrixC[i][j]=matrixA[i][j]+matrixB[i][j];
             }
         }
-
         MPI_Send(&(matrixC[0][0]),(partRow * col),MPI_FLOAT,0,5,MPI_COMM_WORLD);
     }
     
